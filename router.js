@@ -1,5 +1,8 @@
+const todoController = require('./controller/todo')
+
 module.exports = (app) => {
-  app.get('/', (req, res) => {
-    res.send('Hello World!')
-  })
+  app.get('/', todoController.getTodo)
+  app.post('/', todoController.addTodo)
+  app.delete('/:id', todoController.deleteTodo)
+  app.delete('/:id/toggle', todoController.toggleTodo)
 }
