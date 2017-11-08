@@ -1,0 +1,24 @@
+{
+  "name": "job-quest-winter-2017-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/standard",
+    "lint-fix": "./node_modules/.bin/standard --fix",
+    "precommit-msg": "echo '\nPre-commit -> Linting with Standard.js \nUse \"--no-verify\" to force commit\n' && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binkpitch/job-quest-winter-2017-backend.git"
+  },
+  "author": "binkpitch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/binkpitch/job-quest-winter-2017-backend/issues"
+  },
+  "homepage": "https://github.com/binkpitch/job-quest-winter-2017-backend#readme",
+  "devDependencies": {
+    "standard": "^10.0.3"
+  }
+}
