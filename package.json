@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "./node_modules/.bin/standard",
-    "lint-fix": "./node_modules/.bin/standard --fix",
-    "precommit-msg": "echo '\nPre-commit -> Linting with Standard.js \nUse \"--no-verify\" to force commit\n' && exit 0"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +18,12 @@
   "homepage": "https://github.com/binkpitch/job-quest-winter-2017-backend#readme",
   "devDependencies": {
     "standard": "^10.0.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.0",
+    "morgan": "^1.9.0"
   }
 }
