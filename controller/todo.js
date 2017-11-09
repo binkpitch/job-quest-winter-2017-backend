@@ -35,19 +35,14 @@ exports.deleteTodo = (req, res) => {
   })
 }
 
-exports.toggleTodo = (req, res) => {
+exports.toggleTodo = async(req, res) => {
   const id = req.params.id
-  Todo.findById(id, (err, user) => {
+  const todoToToggle = await Todo.findById(id)
+  Todo.findByIdAndUpdate(id, { done: !todoToToggle.done }, { new: true }, (err, toggledTodo) => {
     if (err) {
       res.status(500).send(err)
     } else {
-      Todo.findByIdAndUpdate(id, { done: !user.done }, {new: true}, (err, toggledUser) => {
-        if (err) {
-          res.status(500).send(err)
-        } else {
-          res.status(200).send(toggledUser)
-        }
-      })
+      res.status(200).send(toggledTodo)
     }
   })
 }
