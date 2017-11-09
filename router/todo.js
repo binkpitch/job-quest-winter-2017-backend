@@ -15,7 +15,7 @@ router.post('/', (req, res, err) => {
   .catch(err => res.status(500).send(err))
 })
 
-router.delete('/:id/delete', (req, res, err) => {
+router.delete('/:id', (req, res, err) => {
   const id = req.params.id
   deleteTodo(id)
   .then(() => res.status(204).send())
