@@ -12,7 +12,7 @@ app.use(morgan('combined'))
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use('/api/v1', router)
+app.use(router)
 
 const db = mongoose.connection.openUri('mongodb://localhost/to-do', config)
 db.on('error', () => console.error('@mongoose Connection error'))

@@ -2,10 +2,14 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const todoSchema = new Schema({
-  text: String,
+  text: {
+    String,
+    default: ''
+  },
   done: {
     type: Boolean,
-    default: false
+    default: false,
+    createdAt: Date
   }
 })
 
