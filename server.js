@@ -6,16 +6,16 @@ const mongoose = require('mongoose')
 
 const router = require('./router')
 const app = express()
+const config = require('./config')
 
 app.use(morgan('combined'))
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-router(app)
+app.use('/api/v1', router)
 
-mongoose.connect('mongodb://localhost/to-do')
-const db = mongoose.connection
+const db = mongoose.connection.openUri('mongodb://localhost/to-do', config)
 db.on('error', () => console.error('@mongoose Connection error'))
 db.on('open', () => console.log('@mongoose Connection open'))
 
-app.listen(3001, () => console.log('App is listening at port 3001!'))
+app.listen(3001, () => console.log('@express App is listening at port 3001!'))
