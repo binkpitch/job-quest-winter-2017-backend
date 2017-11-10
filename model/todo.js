@@ -8,8 +8,7 @@ const todoSchema = new Schema({
   },
   done: {
     type: Boolean,
-    default: false,
-    createdAt: Date
+    default: false
   }
 })
 
