@@ -8,7 +8,9 @@ exports.getTodo = (req, res) =>
 
 exports.addTodo = (text) => {
   const newTodo = Todo({
-    text
+    text,
+    createAt: new Date(),
+    done: false
   })
 
   return newTodo.save((err, createdTodo) => {

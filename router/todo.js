@@ -10,6 +10,11 @@ router.get('/', (req, res, err) => {
 
 router.post('/', (req, res, err) => {
   const text = req.body.text
+
+  if (!text) {
+    return res.status(412).send({ error: 'Missing text in request' })
+  }
+
   addTodo(text)
   .then(createdTodo => res.status(201).send(createdTodo))
   .catch(err => res.status(500).send(err))
