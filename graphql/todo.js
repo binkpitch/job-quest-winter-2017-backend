@@ -7,17 +7,17 @@ type Todo {
   done: Boolean! 
 }
 
-type Query {
+type TodoQuery {
   todos: [Todo]
 }
 
 schema {
-  query: Query
+  query: TodoQuery
 }
 `
 
 exports.todoResolvers = {
-  Query: {
+  TodoQuery: {
     todos () {
       return getTodo()
     }
