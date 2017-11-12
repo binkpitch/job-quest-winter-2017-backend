@@ -21,14 +21,14 @@ router.post('/', (req, res, err) => {
 })
 
 router.delete('/:id', (req, res, err) => {
-  const id = req.params.id
-  deleteTodo(id)
-  .then(() => res.status(204).send())
+  const _id = req.params.id
+  deleteTodo(_id)
+  .then(() => res.status(200).send({ _id }))
   .catch(err => res.status(500).send(err))
 })
 router.post('/:id/toggle', (req, res, err) => {
-  const id = req.params.id
-  toggleTodo(id)
+  const _id = req.params.id
+  toggleTodo(_id)
   .then(toggleTodo => res.status(200).send(toggleTodo))
   .catch(err => res.send(500).send(err))
 })
