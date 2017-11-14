@@ -5,7 +5,7 @@ type Todo {
   _id: String!,
   text: String!
   createAt: String!
-  done: Boolean! 
+  closed: Boolean! 
 }
 
 type TodoId {

@@ -9,10 +9,10 @@ exports.getTodo = (req, res) => {
   }
 }
 
-exports.addTodo = (text) => {
+exports.addTodo = (title, content) => {
   const newTodo = Todo({
-    text,
-    createAt: new Date()
+    title,
+    content
   })
 
   try {
@@ -35,7 +35,7 @@ exports.deleteTodo = async (_id) => {
 exports.toggleTodo = async (_id) => {
   try {
     const todoToToggle = await Todo.findById(_id)
-    const toggledTodo = await Todo.findByIdAndUpdate(_id, { done: !todoToToggle.done }, { new: true })
+    const toggledTodo = await Todo.findByIdAndUpdate(_id, { closed: !todoToToggle.closed }, { new: true })
     return toggledTodo
   } catch (err) {
     throw err

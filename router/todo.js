@@ -9,13 +9,14 @@ router.get('/', (req, res, err) => {
 })
 
 router.post('/', (req, res, err) => {
-  const text = req.body.text
+  const title = req.body.title
+  const content = req.body.content
 
-  if (!text) {
-    return res.status(412).send({ error: 'Missing text in request' })
+  if (!title || !content) {
+    return res.status(412).send({ error: 'Missing title or text' })
   }
 
-  addTodo(text)
+  addTodo(title, content)
   .then(createdTodo => res.status(201).send(createdTodo))
   .catch(err => res.status(500).send(err))
 })
@@ -30,7 +31,7 @@ router.post('/:id/toggle', (req, res, err) => {
   const _id = req.params.id
   toggleTodo(_id)
   .then(toggleTodo => res.status(200).send(toggleTodo))
-  .catch(err => res.send(500).send(err))
+  .catch(err => res.status(500).send(err))
 })
 
 module.exports = router
