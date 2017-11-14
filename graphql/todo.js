@@ -14,8 +14,8 @@ type TodoId {
 
 
 type TodoQuery {
-  todos: [Todo!]
-  todo(_id: String!): Todo!
+  todos: [Todo]
+  todo(_id: String!): Todo
 }
 
 
