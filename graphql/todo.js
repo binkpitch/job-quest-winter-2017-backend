@@ -3,8 +3,8 @@ const { getTodo, addTodo, toggleTodo, deleteTodo } = require('../controller/todo
 exports.todoTypeDefs = `
 type Todo {
   _id: String!,
-  text: String!
-  createAt: String!
+  title: String!
+  content: String!
   closed: Boolean! 
 }
 
@@ -38,8 +38,8 @@ exports.todoResolvers = {
     }
   },
   TodoMutation: {
-    addTodo (obj, { text }) {
-      return addTodo(text)
+    addTodo (obj, { title, content }) {
+      return addTodo(title, content)
     },
     toggleTodo (obj, { _id }) {
       return toggleTodo(_id)
