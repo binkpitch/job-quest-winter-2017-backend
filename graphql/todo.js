@@ -19,7 +19,7 @@ type TodoQuery {
 
 
 type TodoMutation {
-  addTodo(text: String!): Todo!
+  addTodo(title: String!, content: String!): Todo!
   toggleTodo(_id: String!): Todo!
   deleteTodo(_id: String!): TodoId!
 }
