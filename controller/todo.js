@@ -1,9 +1,18 @@
 const Todo = require('../model/todo')
 
-exports.getTodo = (req, res) => {
+exports.getTodos = () => {
   try {
     const todos = Todo.find()
     return todos
+  } catch (err) {
+    throw err
+  }
+}
+
+exports.getTodo = (_id) => {
+  try {
+    const todo = Todo.findById({ _id })
+    return todo
   } catch (err) {
     throw err
   }

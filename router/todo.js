@@ -1,10 +1,17 @@
 const express = require('express')
-const { getTodo, addTodo, deleteTodo, toggleTodo } = require('../controller/todo')
+const { getTodos, getTodo, addTodo, deleteTodo, toggleTodo } = require('../controller/todo')
 const router = express.Router()
 
 router.get('/', (req, res, err) => {
-  getTodo()
+  getTodos()
   .then(todos => res.status(200).send(todos))
+  .catch(err => res.status(500).send(err))
+})
+
+router.get('/:id', (req, res, err) => {
+  const _id = req.params.id
+  getTodo(_id)
+  .then(todo => res.status(200).send(todo))
   .catch(err => res.status(500).send(err))
 })
 

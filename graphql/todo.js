@@ -1,4 +1,4 @@
-const { getTodo, addTodo, toggleTodo, deleteTodo } = require('../controller/todo')
+const { getTodos, getTodo, addTodo, toggleTodo, deleteTodo } = require('../controller/todo')
 
 exports.todoTypeDefs = `
 type Todo {
@@ -14,7 +14,8 @@ type TodoId {
 
 
 type TodoQuery {
-  todos: [Todo]
+  todos: [Todo!]
+  todo(_id: String!): Todo!
 }
 
 
@@ -34,7 +35,10 @@ schema {
 exports.todoResolvers = {
   TodoQuery: {
     todos () {
-      return getTodo()
+      return getTodos()
+    },
+    todo (obj, { _id }) {
+      return getTodo(_id)
     }
   },
   TodoMutation: {
