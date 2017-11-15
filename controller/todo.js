@@ -1,31 +1,31 @@
 const Todo = require('../model/todo')
 
-exports.getTodos = () => {
+exports.getTodos = async () => {
   try {
-    const todos = Todo.find()
+    const todos = await Todo.find()
     return todos
   } catch (err) {
     throw err
   }
 }
 
-exports.getTodo = (_id) => {
+exports.getTodo = async (_id) => {
   try {
-    const todo = Todo.findById({ _id })
+    const todo = await Todo.findById({ _id })
     return todo
   } catch (err) {
     throw err
   }
 }
 
-exports.addTodo = (title, content) => {
+exports.addTodo = async (title, content) => {
   const newTodo = Todo({
     title,
     content
   })
 
   try {
-    const createdTodo = newTodo.save()
+    const createdTodo = await newTodo.save()
     return createdTodo
   } catch (err) {
     throw err
