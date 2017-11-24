@@ -1,29 +1,52 @@
 const Todo = require('../model/todo')
 
-exports.getTodo = (req, res) =>
-  Todo.find({}, (err, todos) => {
-    if (err) throw err
+exports.getTodos = async () => {
+  try {
+    const todos = await Todo.find()
     return todos
-  })
-
-exports.addTodo = (text) => {
-  const newTodo = Todo({
-    text
-  })
-
-  return newTodo.save((err, createdTodo) => {
-    if (err) throw err
-    return createdTodo
-  })
+  } catch (err) {
+    throw err
+  }
 }
 
-exports.deleteTodo = (id) =>
-  Todo.findByIdAndRemove(id, err => {
-    if (err) throw err
+exports.getTodo = async (_id) => {
+  try {
+    const todo = await Todo.findById({ _id })
+    return todo
+  } catch (err) {
+    throw err
+  }
+}
+
+exports.addTodo = async (title, content) => {
+  const newTodo = Todo({
+    title,
+    content
   })
 
-exports.toggleTodo = async(id) => {
-  const todoToToggle = await Todo.findById(id)
-  return Todo.findByIdAndUpdate(id, { done: !todoToToggle.done }, { new: true })
-  .then(toggledTodo => toggledTodo)
+  try {
+    const createdTodo = await newTodo.save()
+    return createdTodo
+  } catch (err) {
+    throw err
+  }
+}
+
+exports.deleteTodo = async (_id) => {
+  try {
+    await Todo.findByIdAndRemove(_id)
+    return { _id }
+  } catch (err) {
+    throw err
+  }
+}
+
+exports.toggleTodo = async (_id) => {
+  try {
+    const todoToToggle = await Todo.findById(_id)
+    const toggledTodo = await Todo.findByIdAndUpdate(_id, { closed: !todoToToggle.closed }, { new: true })
+    return toggledTodo
+  } catch (err) {
+    throw err
+  }
 }

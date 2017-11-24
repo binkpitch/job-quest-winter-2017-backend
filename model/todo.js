@@ -2,14 +2,18 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const todoSchema = new Schema({
-  text: {
-    String,
-    default: ''
+  title: {
+    type: String,
+    required: true
   },
-  done: {
+  content: {
+    type: String,
+    required: true
+  },
+  closed: {
     type: Boolean,
-    default: false,
-    createdAt: Date
+    required: true,
+    default: false
   }
 })
 

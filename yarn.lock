@@ -50,6 +50,41 @@ ansi-styles@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-2.2.1.tgz#b432dd3358b634cf75e1e4664368240533c1ddbe"
 
+apollo-cache-control@^0.0.x:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/apollo-cache-control/-/apollo-cache-control-0.0.7.tgz#ffef56413a429a1ce204be5b78d248c4fe3b67ac"
+  dependencies:
+    graphql-extensions "^0.0.x"
+
+apollo-server-core@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-1.2.0.tgz#e851c47444991b6f89f88529237076b83e01e8ee"
+  dependencies:
+    apollo-cache-control "^0.0.x"
+    apollo-tracing "^0.1.0"
+    graphql-extensions "^0.0.x"
+
+apollo-server-express@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/apollo-server-express/-/apollo-server-express-1.2.0.tgz#026b12b453b8ecac6044b205b6a85fe596fb5f9e"
+  dependencies:
+    apollo-server-core "^1.2.0"
+    apollo-server-module-graphiql "^1.2.0"
+
+apollo-server-module-graphiql@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/apollo-server-module-graphiql/-/apollo-server-module-graphiql-1.2.0.tgz#899d84f3b747795dbbfc8354aa51622ef038151c"
+
+apollo-tracing@^0.1.0:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/apollo-tracing/-/apollo-tracing-0.1.1.tgz#7a5707543fc102f81cda7ba45b98331a82a6750b"
+  dependencies:
+    graphql-extensions "^0.0.x"
+
+apollo-utilities@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.1.tgz#34b4df0bd6ed71d0afaa7c62489173dca5d07e92"
+
 argparse@^1.0.7:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.9.tgz#73d83bc263f86e97f8cc4f6bae1b0e90a7d22c86"
@@ -221,6 +256,10 @@ cookie@0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
 
+core-js@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.1.tgz#ae6874dc66937789b80754ff5428df66819ca50b"
+
 core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
@@ -285,6 +324,10 @@ del@^2.0.2:
 depd@1.1.1, depd@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.1.tgz#5783b4e1c459f06fa5ca27f991f3d06e7a310359"
+
+deprecated-decorator@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/deprecated-decorator/-/deprecated-decorator-0.1.6.tgz#00966317b7a12fe92f3cc831f7583af329b86c37"
 
 destroy@~1.0.4:
   version "1.0.4"
@@ -717,6 +760,27 @@ graceful-fs@^4.1.2:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
+graphql-extensions@^0.0.x:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/graphql-extensions/-/graphql-extensions-0.0.5.tgz#63bc4a3fd31aab12bfadf783cbc038a9a6937cf0"
+  dependencies:
+    core-js "^2.5.1"
+    source-map-support "^0.5.0"
+
+graphql-tools@^2.7.2:
+  version "2.7.2"
+  resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-2.7.2.tgz#03104a155b15f8441b0e5a7113b12b9512341a9e"
+  dependencies:
+    apollo-utilities "^1.0.1"
+    deprecated-decorator "^0.1.6"
+    uuid "^3.1.0"
+
+graphql@^0.11.7:
+  version "0.11.7"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.11.7.tgz#e5abaa9cb7b7cccb84e9f0836bf4370d268750c6"
+  dependencies:
+    iterall "1.1.3"
+
 has-ansi@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/has-ansi/-/has-ansi-2.0.0.tgz#34f5049ce1ecdf2b0649af3ef24e45ed35416d91"
@@ -861,6 +925,10 @@ is-symbol@^1.0.1:
 isarray@^1.0.0, isarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
+
+iterall@1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.1.3.tgz#1cbbff96204056dde6656e2ed2e2226d0e6d72c9"
 
 js-tokens@^3.0.2:
   version "3.0.2"
@@ -1402,6 +1470,16 @@ sliced@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/sliced/-/sliced-1.0.1.tgz#0b3a662b5d04c3177b1926bea82b03f837a2ef41"
 
+source-map-support@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.0.tgz#2018a7ad2bdf8faf2691e5fddab26bed5a2bacab"
+  dependencies:
+    source-map "^0.6.0"
+
+source-map@^0.6.0:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
+
 sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
@@ -1543,6 +1621,10 @@ util-deprecate@~1.0.1:
 utils-merge@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
+
+uuid@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.1.0.tgz#3dd3d3e790abc24d7b0d3a034ffababe28ebbc04"
 
 vary@^1, vary@~1.1.2:
   version "1.1.2"
